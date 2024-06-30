@@ -1,0 +1,71 @@
+/* Basket Page Styles */
+.basket-container {
+    margin-top: 2rem;
+}
+
+.basket-title {
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.basket-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.basket-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.basket-item img {
+    width: 100px;
+    height: auto;
+    object-fit: cover;
+}
+
+.basket-item-details {
+    flex-grow: 1;
+    margin-left: 1rem;
+}
+
+.basket-item-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.basket-item-quantity,
+.basket-item-price {
+    font-size: 1rem;
+}
+
+.basket-total {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.basket-checkout-button {
+    display: block;
+    margin: 2rem auto;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #1976d2;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.basket-checkout-button:hover {
+    background-color: #1565c0;
+}
