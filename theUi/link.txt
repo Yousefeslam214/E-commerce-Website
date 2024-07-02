@@ -1,0 +1,28 @@
+https://www.behance.net/gallery/200050147/Website-online-store-of-the-clothing-brand
+
+
+
+The font used in the navigation bar appears to be a sans-serif
+typeface, similar to Helvetica or Arial, in a regular weight.
+The size of the font seems to be relatively small,
+likely around 12 to 14 pixels.
+To determine the exact font and size,
+it would be best to inspect the webpage's CSS using browser developer tools.
+This would provide precise information about 
+the font family and size used in the navigation bar.
+
+
+
+
+const pages = ['ABOUT US', 'CATALOG', 'BASKET', 'FAVOURITES', 'DELIVERY', 'PROFILE'];
+
+
+The font in the image appears to be a bold, sans-serif typeface. While it is difficult to identify the exact font without more details, some common sans-serif fonts that have a similar bold and modern appearance include:
+
+Helvetica Neue Bold
+Arial Black
+Futura Bold
+Impact
+Akzidenz-Grotesk Bold
+For precise identification, you can use online tools such as WhatTheFont or upload the image to a font recognition service.
+

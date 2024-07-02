@@ -23,6 +23,8 @@ const pages = [
   { name: 'ABOUT US', link: '/' },
   { name: 'CATALOG', link: '/catalog' },
   { name: 'BASKET', link: '/basket' },
+  { name: 'FAVOURITES', link: '/favourites' },
+  { name: 'DELIVERY', link: '/delivery' },
 ];
 
 function ResponsiveAppBar() {

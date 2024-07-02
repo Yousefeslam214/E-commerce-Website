@@ -6,29 +6,34 @@ import dress from '/dress.jpg';
 import dress2 from '/dress2.jpeg';
 import man from '/man.jpeg';
 import { Box, Button, Grid, Divider } from '@mui/material';
-
+import './Hero.css'
 const Hero = () => {
     return (
-        <Box>
+        <Box mt={'40px'}>
             {/* First Section */}
-            <Box sx={{ fontSize: '50px', fontWeight: 'bold' }}>
-                <h1>clothes for life Not life for clothes</h1>
+            <Box sx={{ fontSize: '75px', fontWeight: 'bold', fontFamily: 'Verdana', letterSpacing: '-9px' }}>
+                <h1>CLOTHES FOR LIFE,</h1>
+                <h1 className='not'
+    //              display:flex;
+    // justify-content: flex-end;
+    >NOT LIFE FOR CLOTHES</h1>
             </Box>
 
             {/* Second Section - Grid Container */}
-            <Grid container spacing={2}>
+            <Grid container spacing={2} sx={{ display: 'flex', height: '400px' }}>
                 {/* Left Column - Grid Item (xs=12 on mobile, md=5 on medium screens) */}
-                <Grid item xs={12} md={5}>
-                    <Box>
-                        <Box>
-                            <p>SINCE 1996</p>
-                            <Button sx={{ border: 'black solid 1px', width: '100%', color: 'black' }}>GO TO CATALOG</Button>
-                        </Box>
-                    </Box>
+                <Grid item xs={12} md={4} sx={{
+                    height: '100%',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    flexDirection: ' column'
+                }}>
+                    <p>SINCE 1996</p>
+                    <Button sx={{ border: 'black solid 1px', width: '100%', color: 'black' }}>GO TO CATALOG</Button>
                 </Grid>
 
                 {/* Right Column - Grid Item (xs=12 on mobile, md=7 on medium screens) */}
-                <Grid item xs={12} md={7}>
+                <Grid item xs={12} md={6}>
                     <Box>
                         <img src={boy} alt="boy" style={{ maxWidth: '100%', height: 'auto' }} />
                         <h1>

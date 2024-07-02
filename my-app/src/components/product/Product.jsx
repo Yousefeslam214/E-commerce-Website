@@ -1,23 +1,32 @@
-import React, { useContext } from 'react';
-//import link
+import React, { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-//import icons
-import { BsPlus, BsEyeFill } from 'react-icons/bs'
+import { BsPlus, BsEyeFill } from 'react-icons/bs';
+import { MdOutlineFavorite, MdOutlineFavoriteBorder } from "react-icons/md";
 import './Product.css';
 import { CartContext } from '../../contexts/CartContext';
-// import '../../index.css'
-
+import { FavouriteContext } from '../../contexts/FavouriteContext';
 
 const Product = ({ product }) => {
-    const { addToCart, cart } = useContext(CartContext);
-    //destructure product
+    const { addToCart } = useContext(CartContext);
+    const { toggleFavourite, favourite } = useContext(FavouriteContext);
+    const [isFavourite, setIsFavourite] = useState(false);
+
     const { id, image, category, title, price } = product;
-console.log(cart)
+
+
+    useEffect(() => {
+        setIsFavourite(favourite.some(item => item.id === id));
+        // setIsFavourite(favourite.includes(id));
+    }, [favourite, id]);
+
+    const handleFavouriteClick = () => {
+        toggleFavourite(product, id);
+    };
+
     return (
         <div>
             <div className='border border-[#e4e4e4] h-[300px] mb-4 relative overflow-hidden group transition'>
                 <div className='w-full h-full flex justify-center items-center'>
-                    {/* image */}
                     <div className='w-[200px] mx-auto flex justify-center items-center'>
                         <img
                             className='max-h-[160px] group-hover:scale-110 transition duration-300'
@@ -26,7 +35,6 @@ console.log(cart)
                         />
                     </div>
                 </div>
-                {/* buttons */}
                 <div className='absolute top-6 -right-11 group-hover:right-5 p-2 flex flex-col items-center justify-center gap-y-2 opacity-0 group-hover:opacity-100 transition-all duration-300'>
                     <button onClick={() => addToCart(product, id)}>
                         <div className='flex justify-center items-center text-white w-12 h-12 bg-red-500'>
@@ -39,9 +47,32 @@ console.log(cart)
                     >
                         <BsEyeFill />
                     </Link>
+                    {/* <button onClick={handleFavouriteClick}>
+                        <div className={`flex justify-center items-center text-white w-12 h-12 ${isFavourite ? 'bg-red-500' : 'bg-gray-500'}`}>
+                            {isFavourite ? <MdOutlineFavorite /> : <MdOutlineFavoriteBorder />}
+                        </div>
+                    </button> */}
+                    
+                    {/* {isFavourite ? (<button onClick={handleFavouriteClick}>
+                        <div className={`flex justify-center items-center text-white w-12 h-12 bg-gray-500`}>
+                            <MdOutlineFavorite />
+                        </div>
+                    </button>) : (
+                        <button onClick={handleFavouriteClick}>
+                            <Link to={'/favourites'}>
+                                <div className={`flex justify-center items-center text-white w-12 h-12 bg-gray-500`}>
+                                    <MdOutlineFavoriteBorder />
+                                </div>
+                            </Link>
+                        </button>
+                    )} */}
+                    <button onClick={handleFavouriteClick}>
+                        <div className={`flex justify-center items-center text-white w-12 h-12 ${isFavourite ? 'bg-red-500' : 'bg-gray-500'}`}>
+                            {isFavourite ? <MdOutlineFavorite /> : <MdOutlineFavoriteBorder />}
+                        </div>
+                    </button>
                 </div>
             </div>
-            {/* category & title & price */}
             <div>
                 <div className='text-sm capitalize text-gray-500 mb-1'>{category}</div>
                 <Link to={`/product/${id}`}>
@@ -50,7 +81,7 @@ console.log(cart)
                 <div className='font-semibold'>$ {price}</div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Product
+export default Product;

@@ -2,9 +2,16 @@ import React, { useContext } from 'react';
 import { CartContext } from '../../contexts/CartContext';
 import { Container, Box, Typography, Button, Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
+import { DeliveryContext } from '../../contexts/DeliveryContext';
 
 const Basket = () => {
-    const { cart, total, itemAmount } = useContext(CartContext);
+    const { cart, total, clearCart } = useContext(CartContext);
+    const { addToCartDelivery } = useContext(DeliveryContext);
+
+    const handleAddToCartDelivery = () => {
+        addToCartDelivery(cart);
+        clearCart(); // Clear the cart after transferring items to delivery
+    };
 
     return (
         <Container maxWidth="lg" sx={{ marginTop: '2rem' }}>
@@ -34,10 +41,11 @@ const Basket = () => {
                     <Typography variant="h5">Total: ${total.toFixed(2)}</Typography>
                     <Button
                         component={Link}
-                        to="/checkout"
+                        to="/delivery"
                         variant="contained"
                         color="primary"
                         sx={{ marginTop: '1rem' }}
+                        onClick={handleAddToCartDelivery}
                     >
                         Proceed to Checkout
                     </Button>
