@@ -2,3 +2,21 @@
                  display:flex;
          justify-content: flex-end;
 }
+
+@media only screen and (max-width: 600px) {
+    .section {
+        height:  auto !important;
+    }
+    .heroText {
+        font-size: 46px !important;
+            letter-spacing: -4px !important;
+    }
+    .normalText {
+
+        font-size: 7px;
+    }
+         .displayNone {
+             display: none;
+         }
+}
+

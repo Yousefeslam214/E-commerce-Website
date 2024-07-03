@@ -4,11 +4,13 @@ import './Footer.css'
 
 const Footer = () => {
   return (
-    <Box sx={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', background: 'black', color: 'white', py: 4, px: 4, }}>
+    <Box sx={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', background: 'black', color: 'white', p: 3, }} className='footer'>
+
       <Box sx={{
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        mr: '20px'
       }}>
         <Typography className='promotions'>Promotions</Typography>
         <Typography className='promotions'>PROMO CODES</Typography>
@@ -17,8 +19,12 @@ const Footer = () => {
         <Typography className='promotions'>BECOME A MEMBER</Typography>
         <Typography className='promotions'>CATALOG</Typography>
       </Box>
-      <Box >
-        <Typography sx={{ mb: 2 }}>Support</Typography>
+      <Box sx={{
+        mr: '20px',
+      }}>
+        <Typography sx={{
+          mb: 2,
+        }}>Support</Typography>
         <ul style={{ listStyleType: 'none', padding: 0, fontSize: '12px' }}>
           <li><Link href="#" color="inherit" underline="none">GET HELP</Link></li>
           <li><Link href="#" color="inherit" underline="none">ORDER STATUS</Link></li>
@@ -28,7 +34,9 @@ const Footer = () => {
           <li><Link href="#" color="inherit" underline="none">CONTACT US</Link></li>
         </ul>
       </Box>
-      <Box>
+      <Box sx={{
+        mr: '20px',
+      }}>
         <Typography sx={{ mb: 2 }}>Company</Typography>
         <ul style={{ listStyleType: 'none', padding: 0, fontSize: '12px' }}>
           <li><Link href="#" color="inherit" underline="none">ABOUT LIFEWEAR</Link></li>
@@ -39,21 +47,13 @@ const Footer = () => {
           <li><Link href="#" color="inherit" underline="none">INVESTORS</Link></li>
         </ul>
       </Box>
-      {/* <Box >
-        <ul style={{ listStyleType: 'none', display: 'inline-flex', fontSize: '12px' }}>
-          <li><Link href="#" color="inherit" mr='10px'>INSTAGRAM</Link></li>
-          <li><Link href="#" color="inherit" >FACEBOOK</Link></li>
-        </ul>
-        <Box sx={{ display: ' flex', alignItems: 'flex-end', height: '90%', fontSize: '12px' }}>
-          <p>UNITED KINGDOM</p>
-        </Box>
-      </Box> */}
-      <Box sx={{ color: 'grey' }}>
-        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
+
+      <Box sx={{ color: 'grey' }} className='endOfFooter'>
+        <Box sx={{ color: 'grey', display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }} >
           <Typography className='cookies' sx={{ mb: '25px' }}>COOKIE SETTINGS | PRIVACY AND COOKIE POLICY</Typography>
           <Typography className='cookies' sx={{ mb: '75px' }}>DETAILED INFORMATION ABOUT THE COMPANY</Typography>
         </Box>
-        <Box sx={{ display: 'inline-flex' }}>
+        <Box sx={{ color: 'grey', display: 'inline-flex' }}>
           <Typography className='cookies'>GUIDE TERMS OF USE TERMS OF SALE © 2024 LIFEWEAR, INC. ALL RIGHTS RESERVED</Typography>
         </Box>
       </Box>

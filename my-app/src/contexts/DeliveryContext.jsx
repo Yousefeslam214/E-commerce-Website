@@ -16,27 +16,35 @@ const DeliveryProvider = ({ children }) => {
         setItemAmount(amount);
     }, [itemDelivery]);
 
+    // const addToCartDelivery = (products) => {
+    //     const updatedDelivery = [...itemDelivery];
+    //     products.forEach(product => {
+    //         // Example: Group by category
+    //         const category = product.category; // Adjust this to your product's category attribute
+    //         const existingGroup = updatedDelivery.find(group => group.category === category);
+
+    //         if (existingGroup) {
+    //             // Add product to existing group
+    //             existingGroup.products.push(product);
+    //         } else {
+    //             // Create a new group for this category
+    //             updatedDelivery.push({ category: category, products: [product] });
+    //         }
+    //     });
+
+    //     setItemDelivery(updatedDelivery);
+    // };
+    const [deliverySessions, setDeliverySessions] = useState([]);
+
+    // Function to add products to a new delivery session
     const addToCartDelivery = (products) => {
-        const updatedDelivery = [...itemDelivery];
-        products.forEach(product => {
-            // Example: Group by category
-            const category = product.category; // Adjust this to your product's category attribute
-            const existingGroup = updatedDelivery.find(group => group.category === category);
-
-            if (existingGroup) {
-                // Add product to existing group
-                existingGroup.products.push(product);
-            } else {
-                // Create a new group for this category
-                updatedDelivery.push({ category: category, products: [product] });
-            }
-        });
-
-        setItemDelivery(updatedDelivery);
+        const newSession = [...products];
+        setDeliverySessions([...deliverySessions, newSession]);
     };
 
     return (
-        <DeliveryContext.Provider value={{ itemDelivery, addToCartDelivery, itemAmount }}>
+        <DeliveryContext.Provider value={{ itemDelivery, itemAmount, deliverySessions, addToCartDelivery }}>
+
             {children}
         </DeliveryContext.Provider>
     );

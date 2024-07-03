@@ -8,3 +8,12 @@
     
     font-size: 8px !important;
 }
+@media only screen and (max-width: 600px) {
+    .endOfFooter {
+        position: relative;
+        top: -104px;
+    }
+    .footer {
+        height: 400px;
+    }
+}

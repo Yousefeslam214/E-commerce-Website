@@ -68,7 +68,43 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+
 }
+
 .bg {
   background-color: #FFFFFF;
+}
+
+.bigText {
+  font-family: Verdana;
+  line-height: 1.6;
+  color: black;
+  letter-spacing: -2px;
+  font-size: 30px;
+}
+
+.normalButton {
+  font-family: sans-serif;
+        border: black solid 2px;
+        font-weight: 900;
+        width: 100%;
+        color: black;
+        border-radius: 0px;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        -ms-border-radius: 0px;
+        -o-border-radius: 0px;
+        line-height: 18px;
+              font-size: 13px;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .displayNone {
+        display: none;
+      }
+    
+      .normalButton {
+        font-size: 11px ;
+      }
 }
